@@ -1,0 +1,43 @@
+<div class="game-logo">
+  <a (click)="navigateToHome()">Wordolino</a>
+</div>
+
+<div class="game-container">
+  <div class="question-container">
+    <h2 class="question">{{ currentWord?.definition }}</h2>
+  </div>
+
+  <div class="result-icons">
+    <div *ngIf="showNextButton && lastAnswerCorrect" 
+         class="result-icon"
+         [class.show]="lastAnswerCorrect">
+      <mat-icon class="success">check_circle</mat-icon>
+    </div>
+    <div *ngIf="showNextButton && !lastAnswerCorrect"
+         class="result-icon"
+         [class.show]="!lastAnswerCorrect">
+      <mat-icon class="error">cancel</mat-icon>
+    </div>
+  </div>
+
+  <div class="answers-container">
+    <button *ngFor="let option of options; let i = index" 
+            class="answer"
+            [ngClass]="{
+              'btn1': i === 0,
+              'btn2': i === 1,
+              'btn3': i === 2,
+              'btn4': i === 3,
+              'correct': showNextButton && isCorrectAnswer(option._id),
+              'wrong': showNextButton && isWrongAnswer(option._id)
+            }"
+            (click)="checkAnswer(option)"
+            [disabled]="showNextButton">
+      {{ option.word }}
+    </button>
+  </div>
+
+  <div class="score">
+    Score: {{ score$ | async }}
+  </div>
+</div>
