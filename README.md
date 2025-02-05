@@ -2,6 +2,12 @@
 
 Wordolino is an interactive English learning game designed to enhance vocabulary and language skills. Leveraging modern web technologies like Angular and TypeScript, the application offers engaging word challenges where players match definitions with the correct words. The gamified approach makes learning both fun and effective for users of all ages.
 
+<div align="center" style="display: flex; justify-content: center;">
+  <img src="public/5.gif" alt="swipeable tabs" height="350px" style="margin: 0; padding: 0;">
+  <img src="public/6.gif" alt="an animated drawer inspired by the Apple Music app" height="350px" style="margin: 0; padding: 0;">
+  <img src="public/7.gif" alt="animated grid of images" height="350px" style="margin: 0; padding: 0;">
+</div>
+
 ## Features
 
 - **Interactive Gameplay:** Multiple-choice questions with dynamic word definitions.
