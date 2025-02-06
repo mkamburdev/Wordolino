@@ -23,7 +23,6 @@ export class WordService {
         const firstMeaning = wordData.meanings[0];
         const firstDefinition = firstMeaning?.definitions[0];
         
-        // Eğer açıklama yoksa null dön
         if (!firstDefinition?.definition) {
           return null;
         }
@@ -83,7 +82,6 @@ export class WordService {
           return this.getWord(selectedWord).pipe(
             mergeMap(word => {
               if (!word) {
-                // Eğer kelime geçersizse (açıklaması yoksa), yeni bir kelime dene
                 return getValidWord();
               }
               return of(word);
@@ -103,7 +101,6 @@ export class WordService {
               return this.getWord(randomWord).pipe(
                 mergeMap(word => {
                   if (!word) {
-                    // Eğer seçenek geçersizse, yeni bir seçenek dene
                     return getValidOptions(count);
                   }
                   return getValidOptions(count - 1).pipe(
